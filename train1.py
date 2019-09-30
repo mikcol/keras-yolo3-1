@@ -22,15 +22,15 @@ BATCH_SIZE_2 = 6
 
 
 def _main():
-    annotation_path = 'train.txt'
+    annotation_path = 'annotations.txt'
     log_dir = 'logs/001/'
-    classes_path = 'model_data/openimgs_classes.txt'
+    classes_path = 'model_data/panel_classes.txt'
     anchors_path = 'model_data/yolo_anchors.txt'
     class_names = get_classes(classes_path)
     num_classes = len(class_names)
     anchors = get_anchors(anchors_path)
 
-    input_shape = (416,416) # multiple of 32, hw
+    input_shape = (416, 416) # multiple of 32, hw
 
     if USE_DARKNET53:
         model = create_model(input_shape, anchors, num_classes,
